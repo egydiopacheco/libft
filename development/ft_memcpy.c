@@ -6,7 +6,7 @@
 /*   By: epacheco <epacheco@student.42sp.org.       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 13:35:00 by epacheco          #+#    #+#             */
-/*   Updated: 2021/09/11 13:35:01 by epacheco         ###   ########.fr       */
+/*   Updated: 2021/09/13 13:03:56 by epacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*d;
 	char	*s;
 
-	if (!dest)
+	if (!dest && !src)
 		return (NULL);
 	d = (char *)dest;
 	s = (char *)src;

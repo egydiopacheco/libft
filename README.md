@@ -1,4 +1,4 @@
-[My image](egydiopacheco.github.com/libft/misc/libft.gif)
+![Libft](egydiopacheco.github.com/libft/misc/libft.gif)
 
 
 # Description

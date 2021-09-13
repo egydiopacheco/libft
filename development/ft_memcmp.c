@@ -6,7 +6,7 @@
 /*   By: epacheco <epacheco@student.42sp.org.       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 13:34:57 by epacheco          #+#    #+#             */
-/*   Updated: 2021/09/11 13:34:58 by epacheco         ###   ########.fr       */
+/*   Updated: 2021/09/13 16:13:14 by epacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	st1 = (unsigned char *)s1;
 	st2 = (unsigned char *)s2;
-	while (*st1 && *st2 && *st1 == *st2 && n--)
+	while (n--)
 	{
+		if (*st1 != *st2)
+			return (*st1 - *st2);
 		st1++;
 		st2++;
 	}
-	if (n == 0)
-		return (0);
-	return (*st1 - *st2);
+	return (0);
 }

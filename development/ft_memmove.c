@@ -6,7 +6,7 @@
 /*   By: epacheco <epacheco@student.42sp.org.       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 13:35:02 by epacheco          #+#    #+#             */
-/*   Updated: 2021/09/11 13:35:03 by epacheco         ###   ########.fr       */
+/*   Updated: 2021/09/13 13:10:15 by epacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	*ds;
 	char	*sr;
 
+	if (!src && !dest)
+		return (NULL);
 	ds = (char *)dest;
 	sr = (char *)src;
 	if (ds > sr)

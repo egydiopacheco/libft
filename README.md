@@ -1,5 +1,8 @@
 ![Libft](/misc/libft.gif)
 
+<p align="center" width="100%">
+    <img width="100%" src="https://github.com/egydiopacheco/libft/blob/main/misc/libft.gif">
+</p>
 
 # Description
 Libft is the first project at the 42 school as a cadet. The objective is to rewrite in your own way some libc functions, that will be used in future projects.

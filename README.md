@@ -1,5 +1,3 @@
-![Libft](/misc/libft.gif)
-
 <p align="center" width="100%">
     <img width="100%" src="https://github.com/egydiopacheco/libft/blob/main/misc/libft.gif">
 </p>
@@ -54,4 +52,4 @@ At the moment, the following functions are at disposal:
 - ft_lstmap
 
 # How to use
-
+todo

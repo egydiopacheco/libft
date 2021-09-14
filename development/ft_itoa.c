@@ -6,15 +6,15 @@
 /*   By: epacheco <epacheco@student.42sp.org.       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 13:34:12 by epacheco          #+#    #+#             */
-/*   Updated: 2021/09/11 13:34:15 by epacheco         ###   ########.fr       */
+/*   Updated: 2021/09/14 12:44:33 by epacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	digit_amount(long int n)
+static int	digit_amount(long n)
 {
-	long int	size;
+	long size;
 
 	size = 0;
 	if (n <= 0)
@@ -33,15 +33,15 @@ static int	digit_amount(long int n)
 char	*ft_itoa(int n)
 {
 	char		*c;
-	long int	x;
+	long		x;
 	int			k;
 
 	x = n;
-	k = digit_amount(x) - 1;
-	c = malloc(sizeof(char *) * (k + 1));
+	k = digit_amount(x);
+	c = (char *)malloc(sizeof(char) * (k + 1));
 	if (!c)
 		return (NULL);
-	*(c + k + 1) = '\0';
+	*(c + k--) = '\0';
 	if (x < 0)
 	{
 		*(c + 0) = '-';

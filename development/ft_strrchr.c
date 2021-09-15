@@ -6,7 +6,7 @@
 /*   By: epacheco <epacheco@student.42sp.org.       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 13:36:17 by epacheco          #+#    #+#             */
-/*   Updated: 2021/09/11 13:36:18 by epacheco         ###   ########.fr       */
+/*   Updated: 2021/09/15 01:10:47 by epacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 		return (p);
 	while (p >= s)
 	{
-		if (*p == c)
+		if (*p == (char)c)
 			return (p);
 		p--;
 	}

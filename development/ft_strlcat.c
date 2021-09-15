@@ -6,7 +6,7 @@
 /*   By: epacheco <epacheco@student.42sp.org.       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 13:35:52 by epacheco          #+#    #+#             */
-/*   Updated: 2021/09/11 13:35:54 by epacheco         ###   ########.fr       */
+/*   Updated: 2021/09/15 01:34:13 by epacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	src_size = ft_strlen(src);
 	dest_size = ft_strlen(dst);
-	if (dest_size > size)
+	if (!size || dest_size > size)
 		return (src_size + size);
 	j = 0;
 	while (*(src + j) && (j + dest_size) < (size - 1))

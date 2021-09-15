@@ -6,7 +6,7 @@
 /*   By: epacheco <epacheco@student.42sp.org.       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 13:34:12 by epacheco          #+#    #+#             */
-/*   Updated: 2021/09/14 12:44:33 by epacheco         ###   ########.fr       */
+/*   Updated: 2021/09/15 01:11:07 by epacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	digit_amount(long n)
 {
-	long size;
+	long	size;
 
 	size = 0;
 	if (n <= 0)

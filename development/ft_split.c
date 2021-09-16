@@ -6,60 +6,19 @@
 /*   By: epacheco <epacheco@student.42sp.org.       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 13:35:28 by epacheco          #+#    #+#             */
-/*   Updated: 2021/09/12 13:21:26 by epacheco         ###   ########.fr       */
+/*   Updated: 2021/09/15 21:01:29 by epacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*slice_delimiters(int begin, int end, const char *s)
+static size_t	get_amount(char const *s, char c)
 {
-	char			*fragment;
-	int				j;
-	unsigned int	frag_size;
-
-	j = 0;
-	frag_size = end - begin;
-	fragment = malloc(frag_size * sizeof(char));
-	if (!fragment)
-		return (NULL);
-	while (begin < end)
-		*(fragment + j++) = *(s + begin++);
-	*(fragment + j) = '\0';
-	return (fragment);
-}
-
-static char	**synthetize_array(char **arr, char const *s, char c)
-{
-	size_t	j;
-	size_t	k;
-	int		m;
-
-	j = 0;
-	k = 0;
-	m = -1;
-	while (j <= ft_strlen(s))
-	{
-		if (*(s + j) != c && m < 0)
-			m = j;
-		else if ((*(s + j) == c || j == ft_strlen(s)) && m >= 0)
-		{
-			*(arr + k++) = slice_delimiters(m, j, s);
-			m = -1;
-		}
-		j++;
-	}
-	*(arr + k) = NULL;
-	return (arr);
-}
-
-static int	get_amount(char const *s, char c)
-{
-	int		amount;
 	char	flag;
+	size_t	amount;
 
-	amount = 0;
 	flag = 'F';
+	amount = 0;
 	while (*s)
 	{
 		if (*s == c)
@@ -74,14 +33,46 @@ static int	get_amount(char const *s, char c)
 	return (amount);
 }
 
+static size_t	get_upper_bound(char const *s, char c)
+{
+	size_t	j;
+
+	j = 0;
+	while (*(s + j) && *(s + j) != c)
+		j++;
+	return (j);
+}
+
+static char	**synthetize_array(char const *s, char c, char **arr)
+{
+	size_t	k;
+	size_t	start;
+	size_t	end;
+
+	start = 0;
+	k = 0;
+	while (*(s + start))
+	{
+		if (*(s + start) != c)
+		{
+			end = get_upper_bound(s + start, c);
+			*(arr + k) = ft_substr(s, start, end);
+			start = (start + end - 1);
+			k++;
+		}
+		start++;
+	}
+	return (arr);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 
 	if (!s)
-		return (NULL);
-	arr = malloc(sizeof(char *) * get_amount(s, c) + 1);
+		return (0);
+	arr = (char **)ft_calloc(get_amount(s, c) + 1, sizeof(char *));
 	if (!arr)
-		return (NULL);
-	return (synthetize_array(arr, s, c));
+		return (0);
+	return (synthetize_array(s, c, arr));
 }

@@ -6,16 +6,16 @@
 #    By: epacheco <epacheco@student.42sp.org.       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/11 13:37:45 by epacheco          #+#    #+#              #
-#    Updated: 2021/09/11 17:08:29 by epacheco         ###   ########.fr        #
+#    Updated: 2021/09/17 12:03:52 by epacheco         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:= libft.a
 CC		:= clang
-CFLAGS	:= -Wall -Wextra -Werror
+CFLAGS	:= -Wall -Wextra -Werror -I. -c
 RM		:= rm -f
 HEADERS := libft.h
-AR		:= ar rc
+AR		:= ar rcs
 
 SRC_FILES =  ft_atoi.c	ft_bzero.c		ft_calloc.c		ft_isalpha.c	\
 		ft_isalnum.c	ft_isascii.c	ft_isdigit.c	ft_isprint.c	\
@@ -37,7 +37,7 @@ $(NAME): $(SRC_OBJ) $(HEADERS)
 	$(AR) $(NAME) $(SRC_OBJ)
 
 $(BONUS_OBJ):
-	$(CC) -I . -c $(CFLAGS) $(BONUS_FILES)
+	$(CC) $(CFLAGS) $(BONUS_FILES)
 
 all: $(NAME)
 
@@ -52,6 +52,6 @@ re: fclean all
 rebonus: fclean bonus
 
 bonus: $(NAME) $(BONUS_OBJ)
-	ar rcs $(NAME) $(BONUS_OBJ)
+	$(AR) $(NAME) $(BONUS_OBJ)
 
 .PHONY: all clean fclean re bonus rebonus

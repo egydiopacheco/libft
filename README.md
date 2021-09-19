@@ -2,6 +2,7 @@
     <img width="100%" src="https://github.com/egydiopacheco/libft/blob/main/misc/libft.gif">
 </p>
 ---
+
 ![Status](https://img.shields.io/badge/Moulinette%3A-approved-green?style=for-the-badge&logo=appveyor)
 ![Points](https://img.shields.io/badge/Points%3A-125%2F100-blue)
 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
